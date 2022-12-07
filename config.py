@@ -47,6 +47,7 @@ keys = [
     #App summon
     Key([mod], "f", lazy.spawn("firefox")),
     Key([mod], "Return", lazy.spawn("kitty"), desc="Launch terminal"),
+    Key([mod], "e", lazy.spawn("Thunar"), desc="Gestor de archivos"),
 
     #Lanzar rofi menu
     Key([mod], "m", lazy.spawn("rofi -show drun"), desc="Abrir menu"),
