@@ -113,7 +113,7 @@ widget_defaults = dict(
     font="HackNerdFonts",
     fontsize=14,
     padding=8,
-    margin=8,
+    margin=6,
     foreground="#ffffff",
     background="#23272e"
 )
