@@ -47,7 +47,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.GroupBox(),
+                widget.GroupBox(highlight_method='line',fontsize=20),
                 widget.CurrentLayout(),
                 #widget.Prompt(),
                 widget.WindowName(),

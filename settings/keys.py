@@ -53,19 +53,18 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
-groups = [Group(i) for i in "123456789"]
+groups = [Group(i) for i in[
+    "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ",
+]]
 
-for i in groups:
-    keys.extend(
-        [
+for i, group in enumerate(groups):
+    actual_key = str(i + 1)
+    keys.extend([
             # Change workspace
-            Key([mod], i.name, lazy.group[i.name].toscreen(),
-                desc="Switch to group {}".format(i.name)),
+            Key([mod], actual_key, lazy.group[group.name].toscreen()),
             # Move window to workspace
-            Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(i.name),),
-        ]
-    )
+            Key([mod, "shift"], actual_key, lazy.window.togroup(group.name))
+        ])
 
 # Drag floating layouts.
 mouse = [
