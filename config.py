@@ -59,6 +59,8 @@ screens = [
                 ),
                 widget.Clock(format="%d/%m/%y %a %I:%M %p"),
                 widget.Systray(),
+                widget.Battery(battery=1),
+                widget.Battery(battery=0),
 		#widget.QuickExit(),
             ],
             24,
