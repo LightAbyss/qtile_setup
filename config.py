@@ -6,7 +6,10 @@ from libqtile.config import Match, Screen
 from libqtile.utils import guess_terminal
 from libqtile import hook
 from settings.keys import *
+from settings.widgets import primary_widgets
 
+def status_bar(widgets):
+    return bar.Bar(widgets, 24, opacity=0.92)
 
 terminal = guess_terminal()
 
@@ -33,42 +36,7 @@ layouts = [
     # layout.Zoomy(),
 ]
 
-widget_defaults = dict(
-    font="HackNerdFonts",
-    fontsize=14,
-    padding=8,
-    margin=6,
-    foreground="#ffffff",
-    background="#23272e"
-)
-extension_defaults = widget_defaults.copy()
-
-screens = [
-    Screen(
-        top=bar.Bar(
-            [
-                widget.GroupBox(highlight_method='line',fontsize=20),
-                widget.CurrentLayout(),
-                #widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.Clock(format="%d/%m/%y %a %I:%M %p"),
-                widget.Systray(),
-                widget.Battery(battery=1),
-                widget.Battery(battery=0),
-		#widget.QuickExit(),
-            ],
-            24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-        ),
-    ),
-]
+screens = [Screen(top=status_bar(primary_widgets))]
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
