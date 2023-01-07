@@ -105,7 +105,7 @@ primary_widgets = [
 
     powerline('dark', 'grey'),
 
-    widget.QuickExit(default_text='[鈴]',fontsize=22,ackground=colors['dark'], padding=5),
+    widget.QuickExit(default_text='[鈴]',fontsize=22,ackground=colors['dark'], padding=5,countdown_format='[{}]'),
 ]
 
 secondary_widgets = [
