@@ -99,9 +99,13 @@ primary_widgets = [
 
     widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
 
-    powerline('dark', 'color1'),
+    powerline('grey', 'color1'),
 
-    widget.Systray(background=colors['dark'], padding=5),
+    widget.Systray(background=colors['grey'], padding=5),
+
+    powerline('dark', 'grey'),
+
+    widget.QuickExit(default_text='[鈴]',fontsize=22,ackground=colors['dark'], padding=5),
 ]
 
 secondary_widgets = [
