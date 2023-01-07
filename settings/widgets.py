@@ -90,8 +90,8 @@ primary_widgets = [
 
     icon(bg="color2", text=' '),  # Icon: nf-fa-feed
     
-    widget.Battery(**base(bg='color2'), battery=1),
-    widget.Battery(**base(bg='color2'), battery=0),
+    widget.Battery(**base(bg='color2'), battery=1,format='{char} {percent:2.0%} {hour:d}:{min:02d}'),
+    widget.Battery(**base(bg='color2'), battery=0,format='{char} {percent:2.0%} {hour:d}:{min:02d}'),
 
     powerline('color1', 'color2'),
 
