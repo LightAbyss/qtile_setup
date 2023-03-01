@@ -54,7 +54,7 @@ keys = [
 ]
 
 groups = [Group(i) for i in[
-    "", "", "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "", "", "",
 ]]
 
 for i, group in enumerate(groups):
